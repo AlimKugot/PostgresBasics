@@ -1,7 +1,5 @@
 Выполнил Куготов Алим 0392.
 
-Прикрепляю [ссылку](sql/part1.sql) на sql код.
-
 ```sql
 DROP TABLE IF EXISTS progress;  
 DROP TABLE IF EXISTS companies;  
@@ -66,13 +64,13 @@ FROM progress;
 Снизу прикрепил скрины с PgAdmin 4.
 Пока получим результат наших `SELECT` запросов (писал в *Intellij IDEA*):
 
-![[img/1/select_companies.png]]
-![[img/1/select_orders.png]]
-![[img/1/select_progress.png]]
+![select_companies](https://github.com/AlimKugot/SubdHw/blob/master/img/1/select_companies.png)
+![select_orders](https://github.com/AlimKugot/SubdHw/blob/master/img/1/select_companies.png)
+![select_progress](https://github.com/AlimKugot/SubdHw/blob/master/img/1/select_progress.png)
 
 <br>
 
-![[img/1/pgadmin.png]]
-![[img/1/table_companies.png]]
-![[img/1/table_orders.png]]
-![[img/1/table_progress.png]]
+![pgadmin](https://github.com/AlimKugot/SubdHw/blob/master/img/1/pgadmin.png)
+![companies](https://github.com/AlimKugot/SubdHw/blob/master/img/1/table_companies.png)
+![orders](https://github.com/AlimKugot/SubdHw/blob/master/img/1/table_orders.png)
+![progress](https://github.com/AlimKugot/SubdHw/blob/master/img/1/table_progress_1.png)
