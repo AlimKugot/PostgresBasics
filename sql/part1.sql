@@ -36,9 +36,11 @@ CREATE TABLE progress
         ON UPDATE CASCADE
         ON DELETE RESTRICT);
 
-
 INSERT INTO companies(id, company_name, telephone)
 VALUES ('11A11', 'vk.com', '+7-952-228-11-52');
+
+INSERT INTO companies(id, company_name, address, telephone)
+VALUES('11Z11', '');
 
 INSERT INTO orders(id, order_name, cost, count)
 VALUES ('11-A-11', 'vk-videos', 100, 2);
