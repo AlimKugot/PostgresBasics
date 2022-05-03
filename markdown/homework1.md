@@ -40,21 +40,7 @@ CREATE TABLE progress
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 );
-
-
--- проверка регулярного выражения
-INSERT INTO companies(id, company_name, telephone)
-VALUES ('11A11', 'vk.com', '+7-952-228-11-52');
-
-SELECT *
-FROM companies;
 ```
-
-<br>
-
-Убедился, что `RegExp` для телефона написан верно.
-
-![select_companies](https://github.com/AlimKugot/SubdHw/blob/master/img/1/select_companies.png)
 
 <br>
 
