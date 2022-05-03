@@ -25,20 +25,23 @@ CREATE TABLE progress
 (
     companies_id varchar(5),
     orders_id    varchar(8),
-    date         date DEFAULT CURRENT_DATE,
+    created_date         date DEFAULT CURRENT_DATE,
     is_done      bool DEFAULT FALSE,
     date_done    date,
-    CONSTRAINT progress_valid_date CHECK (date_done > date),
+    CONSTRAINT progress_valid_date CHECK (date_done > created_date),
     PRIMARY KEY (companies_id, orders_id),
     FOREIGN KEY (companies_id) REFERENCES companies (id)
         ON UPDATE CASCADE
         ON DELETE RESTRICT,    FOREIGN KEY (orders_id) REFERENCES orders (id)
         ON UPDATE CASCADE
-        ON DELETE RESTRICT);
-
+        ON DELETE RESTRICT
+);
 
 INSERT INTO companies(id, company_name, telephone)
 VALUES ('11A11', 'vk.com', '+7-952-228-11-52');
+
+INSERT INTO companies(id, company_name, address, telephone)
+VALUES('11Z11', '');
 
 INSERT INTO orders(id, order_name, cost, count)
 VALUES ('11-A-11', 'vk-videos', 100, 2);
