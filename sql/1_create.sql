@@ -17,7 +17,7 @@ CREATE TABLE orders
     id         varchar(8) PRIMARY KEY NOT NULL,
     order_name varchar(100)           NOT NULL,
     cost       numeric                NOT NULL CHECK (cost > 0),
-    count      int                    NOT NULL CHECK (count > 0),
+    count      int                    NOT NULL CHECK (count > 0 AND count < 9999),
     CONSTRAINT orders_valid_id CHECK (id SIMILAR TO '\d{2}\-[A-Z]\-\d{2}')
 );
 
@@ -25,32 +25,15 @@ CREATE TABLE progress
 (
     companies_id varchar(5),
     orders_id    varchar(8),
-    date         date DEFAULT CURRENT_DATE,
-    is_done      bool DEFAULT FALSE,
+    created_date date NOT NULL DEFAULT CURRENT_DATE,
+    is_done      bool          DEFAULT FALSE,
     date_done    date,
-    CONSTRAINT progress_valid_date CHECK (date_done > date),
+    CONSTRAINT progress_valid_date CHECK (date_done > created_date),
     PRIMARY KEY (companies_id, orders_id),
     FOREIGN KEY (companies_id) REFERENCES companies (id)
         ON UPDATE CASCADE
-        ON DELETE RESTRICT,    FOREIGN KEY (orders_id) REFERENCES orders (id)
+        ON DELETE RESTRICT,
+    FOREIGN KEY (orders_id) REFERENCES orders (id)
         ON UPDATE CASCADE
-        ON DELETE RESTRICT);
-
-
-INSERT INTO companies(id, company_name, telephone)
-VALUES ('11A11', 'vk.com', '+7-952-228-11-52');
-
-INSERT INTO orders(id, order_name, cost, count)
-VALUES ('11-A-11', 'vk-videos', 100, 2);
-
-INSERT INTO progress(companies_id, orders_id, date_done)
-VALUES ('11A11', '11-A-11', '2025-08-04');
-
-SELECT *
-FROM companies;
-
-SELECT *
-FROM orders;
-
-SELECT *
-FROM progress;
+        ON DELETE RESTRICT
+);
