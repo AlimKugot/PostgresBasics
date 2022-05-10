@@ -1,6 +1,3 @@
-Выполнил Куготов Алим 0392.
-
-```sql
 DROP TABLE IF EXISTS progress;
 DROP TABLE IF EXISTS companies;
 DROP TABLE IF EXISTS orders;
@@ -20,7 +17,7 @@ CREATE TABLE orders
     id         varchar(8) PRIMARY KEY NOT NULL,
     order_name varchar(100)           NOT NULL,
     cost       numeric                NOT NULL CHECK (cost > 0),
-    count      int                    NOT NULL CHECK (count > 0),
+    count      int                    NOT NULL CHECK (count > 0 AND count < 9999),
     CONSTRAINT orders_valid_id CHECK (id SIMILAR TO '\d{2}\-[A-Z]\-\d{2}')
 );
 
@@ -28,8 +25,8 @@ CREATE TABLE progress
 (
     companies_id varchar(5),
     orders_id    varchar(8),
-    created_date date DEFAULT CURRENT_DATE,
-    is_done      bool DEFAULT FALSE,
+    created_date date NOT NULL DEFAULT CURRENT_DATE,
+    is_done      bool          DEFAULT FALSE,
     date_done    date,
     CONSTRAINT progress_valid_date CHECK (date_done > created_date),
     PRIMARY KEY (companies_id, orders_id),
@@ -40,11 +37,3 @@ CREATE TABLE progress
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 );
-```
-
-<br>
-
-![pgadmin](https://github.com/AlimKugot/SubdHw/blob/master/img/1/pgadmin.png)
-![companies](https://github.com/AlimKugot/SubdHw/blob/master/img/1/table_companies.png)
-![orders](https://github.com/AlimKugot/SubdHw/blob/master/img/1/table_orders.png)
-![progress](https://github.com/AlimKugot/SubdHw/blob/master/img/1/table_progress_1.png)
