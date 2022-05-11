@@ -77,7 +77,8 @@ VALUES ('33C33', '33-C-33', '2018-06-26');
 
 -- 6: set done_date progress
 UPDATE progress
-    SET date_done='2021-05-10'
+    SET date_done='2021-05-10',
+            is_done=true
     WHERE companies_id='11A11';
 
 -- 7: delete
