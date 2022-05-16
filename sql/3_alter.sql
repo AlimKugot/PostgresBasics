@@ -26,7 +26,7 @@ ALTER TABLE companies
 ALTER TABLE orders
     -- 1: rise up count type
     DROP CONSTRAINT orders_count_check,
-    ADD CONSTRAINT orders_count_check CHECK (count > 0 AND count <= 15000),
+    ADD CHECK (count > 0 AND count <= 15000),
     -- 2: cost may be null
     ALTER COLUMN cost DROP NOT NULL,
     -- 3: create status variable
