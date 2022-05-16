@@ -39,7 +39,6 @@ CREATE TABLE progress
 );
 
 
-
 -- 1: insert into companies
 INSERT INTO companies(id, company_name, city, address, telephone)
 VALUES ('11A11', 'vk', 'Saint-Petersburg', '28 Nevskiy Ave., 5th Floor', '+7-921-111-11-11');
@@ -77,27 +76,28 @@ VALUES ('33C33', '33-C-33', '2018-06-26');
 
 -- 6: set done_date progress
 UPDATE progress
-    SET date_done='2021-05-10',
-            is_done=true
-    WHERE companies_id='11A11';
+SET date_done='2021-05-10',
+    is_done= true
+WHERE companies_id = '11A11';
 
 -- 7: delete
-DELETE FROM progress
-    WHERE companies_id='33C33';
+DELETE
+FROM progress
+WHERE companies_id = '33C33';
 
 
 -- 8: update company_id and check progress UPDATE CASCADE
 UPDATE companies
-    SET id='99Z99'
-    WHERE id='11A11';
+SET id='99Z99'
+WHERE id = '11A11';
 
 -- 9: delete company_id and check progress DELETE CASCADE
-DELETE FROM companies
-    WHERE id='22B22';
+-- DELETE FROM companies
+--     WHERE id='22B22';
 
-SELECT *
-FROM companies;
-SELECT *
-FROM orders;
-SELECT *
-FROM progress;
+-- SELECT *
+-- FROM companies;
+-- SELECT *
+-- FROM orders;
+-- SELECT *
+-- FROM progress;
