@@ -1,7 +1,8 @@
 # Субд
 
 
->Выполняю задания по PostgreSQL в университете.
+Выполняю задания по PostgreSQL в университете.
+
 
 <br>
 
@@ -12,4 +13,4 @@
 |3|[Модификация таблиц](https://github.com/AlimKugot/PostgresqlBasics/blob/master/sql/3_alter.sql)|✔|
 |4|[Индексы](https://github.com/AlimKugot/PostgresqlBasics/blob/master/sql/4_index.sql)|✔|
 |5|[Формирование запросов-выборок](https://github.com/AlimKugot/PostgresqlBasics/blob/master/sql/5_select.sql)|✔|
-|6|[Создание представлений]()|🕑|
+|6|[Создание представлений](https://github.com/AlimKugot/PostgresqlBasics/blob/master/sql/6_views.sql)|✔|
